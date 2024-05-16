@@ -22,5 +22,22 @@ variables:
 
 steps:
   
-- script: dotnet build /home/slavik/github/helloworld/hello/*.csproj
+- script: dotnet build .csproj
   displayName: 'Build the artifact'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: 'c20c9286-9ec3-4611-af80-efb9055a385f'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'c20c9286-9ec3-4611-af80-efb9055a385f'
