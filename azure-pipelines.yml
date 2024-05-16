@@ -39,5 +39,5 @@ steps:
 - script: cd ./$(app_name) && dotnet pack -p Version=$(app_version) 
   displayName: 'Pack the NuGet_File'
 
-- script: cd ./$(app_name) && dotnet nuget push --source $(nupkg_path) --api-key az $(nupkg_path)
+- script: dotnet nuget push --source "https://pkgs.dev.azure.com/slavikb1/_packaging/slavikb1/nuget/v3/index.json" --api-key az /home/slavik/myagent/_work/3/s/hello/bin/Release/hello.1.0.$(app_version).nupkg
   displayName: 'Publish NuGet_File Azure Artifacts'
