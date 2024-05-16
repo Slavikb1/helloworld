@@ -28,3 +28,16 @@ steps:
 - publish: $(dll_path)
   artifact: hello
   displayName: 'Publish .dll to Pipeline'
+
+- task: artifactstagger@1
+  inputs:
+    EndpointType: 'integrated'
+    StageNameTag: false
+    CustomTags: $(branchName)_$(app_version)
+  displayName: 'Tag the Buildid'
+
+- script: cd ./$(app_name) && dotnet pack -p Version=$(app_version) 
+  displayName: 'Pack the NuGet_File'
+
+- script: cd ./$(app_name) && dotnet nuget push --source $(ORG_NAME) --api-key az $(nupkg_path)
+  displayName: 'Publish NuGet_File Azure Artifacts'
