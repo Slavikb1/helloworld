@@ -55,3 +55,6 @@ steps:
 
 - script: dotnet nuget push --source "https://pkgs.dev.azure.com/slavikb1/_packaging/slavikb1/nuget/v3/index.json" --api-key az /home/slavik/myagent/_work/3/s/hello/bin/Release/hello.$(app_version).nupkg
   displayName: 'Publish NuGet_File Azure Artifacts'
+
+- script: echo "$(branchName)_$(app_version)"
+  displayName: 'Display Version Number'
