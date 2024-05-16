@@ -22,9 +22,10 @@ variables:
 
 steps:
   
-- script: dotnet build .csproj
-  displayName: 'Build the artifact'
-
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
