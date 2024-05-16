@@ -22,10 +22,23 @@ variables:
 
 steps:
 
-  
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'blabla'
+    scannerMode: 'MSBuild'
+    projectKey: 'hello_hello_f877abcf-e307-4abe-b00a-a0e7d2832b85'
+
 - script: cd ./$(app_name) && dotnet build 
   displayName: 'Build Artifact'
 
+- task: SonarQubeAnalyze@5
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'
+    
 - publish: $(dll_path)
   artifact: hello
   displayName: 'Publish .dll to Pipeline'
