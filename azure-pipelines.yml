@@ -48,7 +48,7 @@ steps:
     EndpointType: 'integrated'
     StageNameTag: false
     CustomTags: $(branchName)_$(app_version)
-  displayName: 'Tag the Buildid'
+  displayName: 'Tag the Build'
 
 - script: cd ./$(app_name) && dotnet pack -p Version=$(app_version) 
   displayName: 'Pack the NuGet_File'
