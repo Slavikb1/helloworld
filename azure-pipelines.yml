@@ -22,10 +22,9 @@ variables:
 
 steps:
   
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    
+- script: dotnet build /home/slavik/github/helloworld/hello/*.csproj
+  displayName: 'Build the artifact'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
