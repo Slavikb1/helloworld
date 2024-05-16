@@ -14,7 +14,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   app_version: '1.0.$(Build.BuildId)'
-  app_name: 'helloworld'
+  app_name: 'hello'
   ORG_NAME: 'slavikb1'
   branchName:  $(Build.SourceBranchName) 
   nupkg_path: $(System.DefaultWorkingDirectory)/$(app_name)/bin/Release/$(app_name).$(app_version).nupkg
@@ -22,8 +22,8 @@ variables:
 
 steps:
   
-- script: dotnet build /home/slavik/github/helloworld/hello/*.csproj
-  displayName: 'Build the artifact'
+# - script: dotnet build /home/slavik/github/helloworld/hello/*.csproj
+#   displayName: 'Build the artifact'
 
 - task: NuGetToolInstaller@1
   inputs:
@@ -31,9 +31,9 @@ steps:
     
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'restore'
-    feedsToUse: 'select'
-    vstsFeed: 'c20c9286-9ec3-4611-af80-efb9055a385f'
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byBuildNumber'
 
 - task: DotNetCoreCLI@2
   inputs:
