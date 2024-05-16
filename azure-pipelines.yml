@@ -27,10 +27,6 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
-
-- task: DotNetCoreCLI@2
-  inputs:
     command: 'restore'
     feedsToUse: 'select'
     vstsFeed: 'c20c9286-9ec3-4611-af80-efb9055a385f'
