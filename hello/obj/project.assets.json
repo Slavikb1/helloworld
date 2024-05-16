@@ -20,13 +20,14 @@
       "outputPath": "/home/slavik/github/helloworld/hello/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+        "/home/slavik/github/helloworld/hello/nuget.config",
         "/home/slavik/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "https://pkgs.dev.azure.com/slavikb1/_packaging/slavikb1/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {

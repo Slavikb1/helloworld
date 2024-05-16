@@ -1,0 +1,15 @@
+/home/slavik/github/helloworld/hello/bin/Debug/net8.0/hello
+/home/slavik/github/helloworld/hello/bin/Debug/net8.0/hello.deps.json
+/home/slavik/github/helloworld/hello/bin/Debug/net8.0/hello.runtimeconfig.json
+/home/slavik/github/helloworld/hello/bin/Debug/net8.0/hello.dll
+/home/slavik/github/helloworld/hello/bin/Debug/net8.0/hello.pdb
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.GeneratedMSBuildEditorConfig.editorconfig
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.AssemblyInfoInputs.cache
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.AssemblyInfo.cs
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.csproj.CoreCompileInputs.cache
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.sourcelink.json
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.dll
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/refint/hello.dll
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.pdb
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/hello.genruntimeconfig.cache
+/home/slavik/github/helloworld/hello/obj/Debug/net8.0/ref/hello.dll
