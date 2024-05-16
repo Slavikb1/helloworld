@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- master
 
 pool:
   vmImage: ubuntu-latest
@@ -21,6 +21,7 @@ variables:
   dll_path:   $(System.DefaultWorkingDirectory)/$(app_name)/bin/Debug/net8.0/$(app_name).dll
 
 steps:
+
   
 - script: cd ./$(app_name) && dotnet build 
   displayName: 'Build Artifact'
