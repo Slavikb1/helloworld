@@ -22,31 +22,9 @@ variables:
 
 steps:
   
-# - script: dotnet build /home/slavik/github/helloworld/hello/*.csproj
-#   displayName: 'Build the artifact'
+- script: cd ./$(app_name) && dotnet build 
+  displayName: 'Build Artifact'
 
-# - publish: $(dll_path)
-#   artifact: hello
-#   displayName: 'Publish .dll to Pipeline'
-
-
-- task: NuGetToolInstaller@1
-  inputs:
-    versionSpec: 
-    
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'pack'
-    packagesToPack: '**/*.csproj'
-    versioningScheme: 'byBuildNumber'
-    
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: 'c20c9286-9ec3-4611-af80-efb9055a385f'
+- publish: $(dll_path)
+  artifact: hello
+  displayName: 'Publish .dll to Pipeline'
