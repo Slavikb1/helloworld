@@ -39,5 +39,5 @@ steps:
 - script: cd ./$(app_name) && dotnet pack -p Version=$(app_version) 
   displayName: 'Pack the NuGet_File'
 
-- script: cd ./$(app_name) && dotnet nuget push --source $(ORG_NAME) --api-key az $(nupkg_path)
+- script: cd ./$(app_name) && dotnet nuget push --source $(nupkg_path) --api-key az $(nupkg_path)
   displayName: 'Publish NuGet_File Azure Artifacts'
