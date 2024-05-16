@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+  name: default
+
+variables:
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  app_version: '1.0.$(Build.BuildId)'
+  app_name: 'helloworld'
+  ORG_NAME: 'slavikb1'
+  branchName:  $(Build.SourceBranchName) 
+  nupkg_path: $(System.DefaultWorkingDirectory)/$(app_name)/bin/Release/$(app_name).$(app_version).nupkg
+  dll_path:   $(System.DefaultWorkingDirectory)/$(app_name)/bin/Debug/net8.0/$(app_name).dll
+
+steps:
+  
+- script: dotnet build /home/slavik/github/helloworld/hello/*.csproj
+  displayName: 'Build the artifact'
