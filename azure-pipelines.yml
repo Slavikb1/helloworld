@@ -58,3 +58,4 @@ steps:
 
 - script: echo "$(branchName)_$(app_version)"
   displayName: 'Display Version Number'
+  
